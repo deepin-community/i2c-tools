@@ -1,4 +1,4 @@
-.TH I2CDUMP 8 "October 2017"
+.TH I2CDUMP 8 "June 2021"
 .SH NAME
 i2cdump \- examine I2C registers
 
@@ -32,8 +32,8 @@ kernel driver in question. It can also cause i2cdump to return invalid
 results. So use at your own risk and only if you know what you're doing.
 .TP
 .B -r first-last
-Limit the range of registers being accessed. This option is only available
-with modes \fBb\fP, \fBw\fP, \fBc\fP and \fBW\fP. For mode \fBW\fP,
+Limit the range of registers being accessed. This option is not available
+with mode \fBs\fP. For mode \fBW\fP,
 \fBfirst\fR must be even and \fBlast\fR must be odd.
 .TP
 .B -y
@@ -106,20 +106,15 @@ confirmation:
 # i2cdump -r 0x00-0x3f 1 0x2d
 .RE
 .fi
-.PP
-Dump the registers of the SMBus device at address 0x69 on bus 0 (i2c-0),
-using one SMBus block read transaction with error checking enabled, after
-user confirmation:
-.nf
-.RS
-# i2cdump 0 0x69 sp
-.RE
-.fi
 
 .SH BUGS
 To report bugs or send fixes, please write to the Linux I2C mailing list
 <linux-i2c@vger.kernel.org> with Cc to the current maintainer:
 Jean Delvare <jdelvare@suse.de>.
+
+SMBus block mode is deprecated and will be removed in a future version
+of this tool.
+Please use \fIi2cget\fR instead.
 
 .SH SEE ALSO
 i2cdetect(8), i2cget(8), i2cset(8), i2ctransfer(8), isadump(8)
