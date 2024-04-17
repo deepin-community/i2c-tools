@@ -50,7 +50,7 @@ use vars qw($opt_html $opt_bodyonly $opt_side_by_side $opt_merge
 
 use constant LITTLEENDIAN	=> "little-endian";
 use constant BIGENDIAN		=> "big-endian";
-use constant I2C_TOOLS_VER	=> "4.2";
+use constant I2C_TOOLS_VER	=> "4.3";
 
 @vendors = (
 ["AMD", "AMI", "Fairchild", "Fujitsu",
@@ -2177,6 +2177,7 @@ sub decode_rambus($)
 	"DDR SDRAM"	=> \&decode_ddr_sdram,
 	"DDR2 SDRAM"	=> \&decode_ddr2_sdram,
 	"DDR3 SDRAM"	=> \&decode_ddr3_sdram,
+	"LPDDR3 SDRAM"	=> \&decode_ddr3_sdram,
 	"DDR4 SDRAM"	=> \&decode_ddr4_sdram,
 	"DDR4E SDRAM"	=> \&decode_ddr4_sdram,
 	"LPDDR4 SDRAM"	=> \&decode_ddr4_sdram,

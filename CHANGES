@@ -1,6 +1,16 @@
 i2c-tools CHANGES
 -----------------
 
+4.3 (2021-07-22)
+  decode-dimms: Attempt to decode LPDDR3 modules
+  eeprom, eepromer: Removed the tools in favor of eeprog
+  i2cdetect: Sort the bus list by number
+  i2cdump: Add range support to I2C block mode
+           Deprecate SMBus block mode
+  i2cget: Add support for I2C block read
+          Add support for SMBus block read
+  i2ctransfer: Reverted check for returned length from driver
+
 4.2 (2020-09-22)
   manpages: Add BUGS section to let people know how to contact us
   Makefile: Allow to preset all CFLAGS and LDFLAGS variables

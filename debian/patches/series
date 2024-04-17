@@ -1,2 +1,3 @@
 01-decode-dimms-no-eeprom.diff
 02-udevadm.diff
+03-setuptools.diff
